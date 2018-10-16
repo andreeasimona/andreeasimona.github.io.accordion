@@ -2,13 +2,18 @@
   "name": "accordion-css",
   "version": "0.0.1",
   "description": "",
+  "homepage": "https://github.com/andreeasimona/accordion/",
+  "repository": {
+	  "type": "git",
+	  "url": "https://github.com/andreeasimona/accordion/"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run linter && webpack-dev-server --watch --hot --mode=development",
     "build": "webpack --mode=production",
     "run": "npm run linter && webpack-dev-server --mode=production",
-    "linter": "./node_modules/.bin/eslint --ext .js src/"
+	"linter": "./node_modules/.bin/eslint --ext .js src/"
   },
   "author": "Simo",
   "license": "ISC",
