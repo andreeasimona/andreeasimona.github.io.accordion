@@ -1,4 +1,4 @@
-import { createSection, createPanel, createPanelContent } from './helper';
+import { createSection, createPanel, createPanelContent } from '../helper/renderMenu';
 
 /* Accordion Menu Component */
 export default class Menu {

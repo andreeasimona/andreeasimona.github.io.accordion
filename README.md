@@ -25,6 +25,7 @@ Accordion menu using Vanila Javascript and Sass
 ## 3. Run in local enviroment.
 
    - npm start
+   - You can see the content at http://localhost:9000/ 
 
 <a name="deploy"></a>
 ## 4. To deploy the project. The project is deployed to the folder docs, used for the gh-page.
