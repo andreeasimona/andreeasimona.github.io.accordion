@@ -4,30 +4,35 @@
   "description": "",
   "homepage": "https://github.com/andreeasimona/accordion/",
   "repository": {
-	  "type": "git",
-	  "url": "https://github.com/andreeasimona/accordion/"
+    "type": "git",
+    "url": "https://github.com/andreeasimona/accordion/"
   },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run linter && webpack-dev-server --watch --hot --mode=development",
     "build": "webpack --mode=production",
-    "run": "npm run linter && webpack-dev-server --mode=production",
-	"linter": "./node_modules/.bin/eslint --ext .js src/"
+    "deploy": "npm run linter && webpack-dev-server --mode=production",
+    "linter": "./node_modules/.bin/eslint --ext .js src/"
   },
   "author": "Simo",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "css-loader": "^1.0.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-	"webpack-dev-server": "^3.1.9",
-    "eslint": "^5.7.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "webpack-dev-server": "^3.1.9"
   }
 }

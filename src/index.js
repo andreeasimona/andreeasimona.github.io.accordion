@@ -1,4 +1,5 @@
-import { initMenu } from './menu';
+import Menu from './menu';
 import './style.sass';
 
-initMenu();
+const menu = new Menu(3);
+menu.initMenuEvents();
