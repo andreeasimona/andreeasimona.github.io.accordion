@@ -25,7 +25,7 @@ Accordion menu using Vanila Javascript and Sass
 ## 3. Run in local enviroment.
 
    - npm start
-   - You can see the content at http://localhost:9000/ 
+   - You can see the content at http://localhost:9000/
 
 <a name="deploy"></a>
 ## 4. To deploy the project. The project is deployed to the folder docs, used for the gh-page.
@@ -49,12 +49,9 @@ Accordion menu using Vanila Javascript and Sass
    - [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) This is a webpack plugin that simplifies  the creation of HTML files to serve your webpack bundles.
    - [css-loader](https://github.com/webpack-contrib/css-loader) The css-loader interprets @import and url() like import/require() and will resolve them.
    - [node-sass](https://github.com/sass/node-sass) Node-sass is a library that provides binding for Node.js to LibSass. Allows you to natively compile .scss files to css at incredible speed and automatically via a connect middleware.
-   - [sass-loader](https://github.com/webpack-contrib/sass-loader) Loads a Sass/SCSS file and compiles it to CSS.
-   - [style-loader](https://github.com/webpack-contrib/style-loader) Adds CSS to the DOM by injecting a <style> tag
    - [webpack](https://webpack.js.org/) Webpack is a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.
    - [webpack-cli](https://webpack.js.org/api/cli/) Command Line Interface for webpack
    - [webpack-dev-server](https://github.com/webpack/webpack-dev-server) Use webpack with a development server that provides live reloading.
-
    - [babel-core](https://github.com/babel/babel/tree/master/packages/babel-core) Babel compiler core.
    - [babel-loader](https://github.com/babel/babel-loader) This package allows transpiling JavaScript files using Babel and webpack.
    - [babel-plugin-transform-class-properties](https://www.npmjs.com/package/babel-plugin-transform-class-properties) This plugin transforms es2015 static class properties as well as properties declared with the es2016 property initializer syntax.

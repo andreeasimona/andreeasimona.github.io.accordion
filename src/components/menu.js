@@ -1,49 +1,26 @@
-import { createSection, createPanel, createPanelContent } from '../helper/renderMenu';
-
 /* Accordion Menu Component */
 export default class Menu {
   /** Private class constructor
   * @constructor
   * @param number arguments variable reprezenting the number of sections
   */
-  constructor(menuSize) {
-    this.sections = [];
-    this.panels = [];
-    this.render(menuSize);
+  constructor(menu) {
+    this.menu = menu;
   }
 
-  /** Render function; It creates the html for the menu at renders it in the dom.
-  * @param number arguments variable reprezenting the number of sections
-  */
-  render = (menuSize) => {
-    const menuContainer = document.getElementById('menu');
-    const menuWrapper = document.createElement('dl');
-    const helperIterator = [...Array(menuSize)];
-
-    helperIterator.forEach((item, index) => {
-      const section = createSection(index);
-      const panel = createPanel();
-      const panelContent = createPanelContent(index);
-      this.appendMenuItem(section, panel, panelContent, menuWrapper);
-    });
-    menuContainer.appendChild(menuWrapper);
+  init() {
+    this.addExtraSection();
+    this.panels = Array.from(document.querySelectorAll('dd'));
+    this.bindEvents();
   }
 
-  /** Appends one portion of the menu to the menu wrapper.
-  * Stores the section and the panel in the class.
-  */
-  appendMenuItem = (section, panel, panelContent, menuWrapper) => {
-    menuWrapper.appendChild(section);
-    panel.appendChild(panelContent);
-    menuWrapper.appendChild(panel);
-
-    this.sections.push(section);
-    this.panels.push(panel);
+  addExtraSection = () => {
+    // todo get extra section
   }
 
   /* Check if a panel is opened */
   isPanelOpen = (panel) => {
-    return panel.classList.contains('is-open');
+    return panel.classList.contains('Menu-panel--active');
   };
 
   /* Finds an open panel */
@@ -51,29 +28,28 @@ export default class Menu {
     return this.panels.find((element) => { return this.isPanelOpen(element); });
   };
 
-  /* Close the panels */
+  /* Close the panel if it is opened */
   closePanels = () => {
     const openPanel = this.findOpenPanel();
     if (openPanel !== undefined) {
-      openPanel.classList.remove('is-open');
+      openPanel.classList.remove('Menu-panel--active');
     }
   };
 
-  /* Binding for the click element */
-  onClick = (section) => {
+  /* Binding for the click event */
+  onClick = (event) => {
+    const section = event.target;
     const panel = section.nextElementSibling;
     const isCurrentPanelOpen = this.isPanelOpen(panel);
 
     this.closePanels();
     if (!isCurrentPanelOpen) {
-      panel.classList.toggle('is-open');
+      panel.classList.toggle('Menu-panel--active');
     }
   };
 
-  /* Binds each seaction click event */
-  initMenuEvents = () => {
-    this.sections.forEach((section) => {
-      section.addEventListener('click', () => this.onClick(section));
-    });
+  /* Binds the menu events */
+  bindEvents = () => {
+    this.menu.addEventListener('click', this.onClick);
   };
 }

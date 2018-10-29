@@ -1,5 +1,10 @@
-import Menu from './components/menu';
+import Menu from './components/Menu';
+
+const initMenu = () => {
+  const menu = new Menu(document.querySelector('.Menu'));
+  menu.init();
+}
 
 window.onload = () => {
-  new Menu().init(3);
+  initMenu();
 }
