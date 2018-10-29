@@ -1,21 +1,21 @@
 /* Accordion Menu Component */
+import getSection from '../api/section';
+import templateSection from '../templates/section';
 export default class Menu {
-  /** Private class constructor
-  * @constructor
-  * @param number arguments variable reprezenting the number of sections
-  */
   constructor(menu) {
     this.menu = menu;
   }
 
   init() {
     this.addExtraSection();
-    this.panels = Array.from(document.querySelectorAll('dd'));
     this.bindEvents();
   }
 
+  /* Add new section with ajax */
   addExtraSection = () => {
-    // todo get extra section
+    getSection().then(response => {
+      this.menu.innerHTML += templateSection(response);
+    });
   }
 
   /* Check if a panel is opened */
@@ -25,7 +25,8 @@ export default class Menu {
 
   /* Finds an open panel */
   findOpenPanel = () => {
-    return this.panels.find((element) => { return this.isPanelOpen(element); });
+    this.panels = Array.from(document.querySelectorAll('dd')); // todo move this
+    return this.panels.find((element) => this.isPanelOpen(element));
   };
 
   /* Close the panel if it is opened */
