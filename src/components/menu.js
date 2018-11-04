@@ -15,6 +15,7 @@ export default class Menu {
   addExtraSection = () => {
     getSection().then(response => {
       this.menu.innerHTML += templateSection(response);
+      this.panels = Array.from(document.querySelectorAll('dd'));
     });
   }
 
@@ -25,7 +26,6 @@ export default class Menu {
 
   /* Finds an open panel */
   findOpenPanel = () => {
-    this.panels = Array.from(document.querySelectorAll('dd')); // todo move this
     return this.panels.find((element) => this.isPanelOpen(element));
   };
 
