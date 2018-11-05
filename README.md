@@ -44,7 +44,7 @@ Accordion menu using Vanila Javascript and Sass
    - npm run linter
    The project used the airbnb base javascriopt .eslintrc as an extensible shared config.
 
-<a name="test"></a>
+<a name="tests"></a>
 ## 7. For unit tests
 
    - npm test
