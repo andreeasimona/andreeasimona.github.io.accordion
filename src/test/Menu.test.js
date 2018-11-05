@@ -5,7 +5,7 @@ import { bodyHtml, expectedHtml } from '../templates/htmlHelper';
 
 describe('Accordion Menu', () => {
   it('should exists', () => {
-    expect(Menu).to.not.be.undefined;
+    expect(Menu).to.not.be.equal(undefined);
   });
 
   describe('Accordion Menu Logic', () => {
@@ -31,7 +31,7 @@ describe('Accordion Menu', () => {
     });
 
     it('should have a menu property', () => {
-      expect(accordion.menu).to.not.be.undefined;
+      expect(accordion.menu).to.be.equal(menuElement);
     });
 
     it('should get a new section with ajax', () => {
